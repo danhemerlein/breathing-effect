@@ -1,0 +1,11 @@
+@import "../../styles/app.scss";
+
+.Button {
+  &__link {
+    border: 3px solid map-get($colors, "white");
+    color: map-get($colors, "white");
+    text-decoration: none;
+    display: block;
+    width: 15rem;
+  }
+}

@@ -2,13 +2,8 @@
 
 .HomePage {
   height: 100vw;
-  
-  a {
-    text-decoration: underline;
-  }
 
   &__headline {
-    margin: 0 auto;
   }
 
   &__desktop-socials-container {
@@ -16,23 +11,36 @@
     bottom: 2rem;
   }
 
+  &__arrow-container-container {
+    transition: transform 2s cubic-bezier(0.25, 0.2, 0, 1);
+
+    &--show-nav {
+      left: 17rem;
+      transition: left 2s cubic-bezier(0.25, 0.2, 0, 1);
+    }
+
+    &--hide-nav {
+      left: 2rem;
+      transition: left 2s cubic-bezier(0.25, 0.2, 0, 1);
+    }
+  }
+
   &__arrow-container {
-    margin-left: 17rem;
     transition: transform 2s cubic-bezier(0.25, 0.2, 0, 1);
 
     svg {
-      height: 2rem;
-      width: 2rem;
+      height: 3rem;
+      width: 3rem;
     }
 
      &--arrow-rotated {
-      transform: rotate(180deg);
-      transition: transform 0.75s cubic-bezier(0.25, 0.2, 0, 1);
+      transform: rotate(540deg);
+      transition: transform 2s cubic-bezier(0.25, 0.2, 0, 1);
     }
 
     &--arrow-not-rotated {
       transform: rotate(0deg);
-      transition: transform 0.75s cubic-bezier(0.25, 0.2, 0, 1); 
+      transition: transform 2s cubic-bezier(0.25, 0.2, 0, 1); 
     }
   }
 

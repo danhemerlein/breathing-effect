@@ -6,6 +6,7 @@ import './HomePage.scss'
 
 import SocialModule from 'components/SocialModule';
 import Nav from 'components/Nav';
+import Button from 'components/Button';
 import ArrowIcon from 'components/icons/Arrow';
 
 export default class HomePage extends Component {
@@ -64,11 +65,13 @@ export default class HomePage extends Component {
             <SocialModule></SocialModule>
           </div>
 
-          <div className={cx("flex h100")}>
+          <div>
+            <Button></Button>
+          </div>
 
+          <div className={cx("HomePage__arrow-container-container flex h100 absolute", { 'HomePage__arrow-container-container--show-nav': this.state.navOpen === true }, {'HomePage__arrow-container-container--hide-nav': this.state.navOpen === false })}>
 
-
-            <div className={cx("HomePage__arrow-container self-center pointer", { 'HomePage__arrow-container--arrow-not-rotated': this.state.navOpen === true }, { 'HomePage__arrow-container--arrow-rotated': this.state.navOpen === false })}>
+            <div className={cx("HomePage__arrow-container self-center pointer", { 'HomePage__arrow-container--arrow-not-rotated': this.state.navOpen === false }, { 'HomePage__arrow-container--arrow-rotated': this.state.navOpen === true })}>
 
               <ArrowIcon
                 clickHandler={this.toggleNav}>
@@ -77,7 +80,7 @@ export default class HomePage extends Component {
             </div>
           </div>
 
-          <div className={cx("HomePage__nav-container h100", { 'HomePage__nav-container--show': this.state.navOpen === false }, { 'HomePage__nav-container--hide': this.state.navOpen === true })}>
+          <div className={cx("HomePage__nav-container h100", { 'HomePage__nav-container--show': this.state.navOpen === true }, { 'HomePage__nav-container--hide': this.state.navOpen === false })}>
 
             <Nav></Nav>
 
