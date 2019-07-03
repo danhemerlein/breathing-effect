@@ -1,0 +1,13 @@
+@import "../../styles/app.scss";
+
+.SocialModule {
+  
+  &__nav {
+
+    &--list-item {
+      a {
+        font-size: 1.75rem;
+      }
+    }
+  }
+}

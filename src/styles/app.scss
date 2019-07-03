@@ -5,3 +5,7 @@
 @import "./transitions.scss";
 @import "./variables.scss";
 @import '~@sanctucompu/basement/src/index';
+
+.App {
+  animation: fadein $transition-duration-short;
+}

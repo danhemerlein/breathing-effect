@@ -1,0 +1,56 @@
+@import "../../styles/app.scss";
+
+.HomePage {
+  height: 100vw;
+  
+  a {
+    text-decoration: underline;
+  }
+
+  &__headline {
+    margin: 0 auto;
+  }
+
+  &__desktop-socials-container {
+    right: 2rem;
+    bottom: 2rem;
+  }
+
+  &__arrow-container {
+    margin-left: 17rem;
+    transition: transform 2s cubic-bezier(0.25, 0.2, 0, 1);
+
+    svg {
+      height: 2rem;
+      width: 2rem;
+    }
+
+     &--arrow-rotated {
+      transform: rotate(180deg);
+      transition: transform 0.75s cubic-bezier(0.25, 0.2, 0, 1);
+    }
+
+    &--arrow-not-rotated {
+      transform: rotate(0deg);
+      transition: transform 0.75s cubic-bezier(0.25, 0.2, 0, 1); 
+    }
+  }
+
+  &__nav-container {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 16rem;
+    top: 0;
+    transition: transform 2s cubic-bezier(0.25, 0.2, 0, 1);
+
+    &--hide {
+      transform: translateX(-18rem);
+      cursor: pointer;
+    }
+    
+    &--show {
+      transform: translateX(-2rem);
+    }
+  }
+}
