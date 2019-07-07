@@ -32,26 +32,29 @@ const MainView = ({ model }) => {
 
         <Switch>
 
-          <Route exact path="/" render={() => (
-
+          <Route exact path="/" render={(props) => (
+    
             <HomePage 
+              {...props}    
               backgroundImage={get(homePage, "fields.backgroundImage", {})}
             />
 
           )} />
 
-          <Route exact path="/press" render={() => (
+          <Route exact path="/press" render={(props) => (
 
             <Press 
+              {...props}                        
               backgroundImage={get(homePage, "fields.backgroundImage", {})}
               articles={pressPieces}
             />
 
           )} />
 
-          <Route exact path="/tour" render={() => (
+          <Route exact path="/tour" render={(props) => (
 
             <Live
+              {...props}
               backgroundImage={get(homePage, "fields.backgroundImage", {})}
               shows={shows}
             />
