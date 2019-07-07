@@ -3,4 +3,18 @@
 .Press {
   height: 100vw;
 
+  &__container {
+    overflow-y: scroll;
+    overflow-x: hidden; 
+    margin-right: -2rem;
+  }
+
+  &__article {
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    margin-top: 2rem;
+  }  
 }

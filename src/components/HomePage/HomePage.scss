@@ -4,6 +4,24 @@
   height: 100vw;
 
   &__headline {
+    a {       
+      text-decoration: none;
+      
+      &:visited {
+        text-decoration: none;
+        color: map-get($colors, "white");
+      }
+      
+      &:active {
+        text-decoration: none;
+        color: map-get($colors, "white");
+      }
+      
+      &:hover {
+        text-decoration: none;
+        color: map-get($colors, "white");
+      }
+      }
   }
 
   &__desktop-socials-container {
@@ -31,6 +49,7 @@
     svg {
       height: 3rem;
       width: 3rem;
+      fill: map-get($colors, "black");
     }
 
      &--arrow-rotated {
@@ -60,5 +79,11 @@
     &--show {
       transform: translateX(-2rem);
     }
+  }
+
+  &__desktop-button-container {
+    bottom: 2rem;
+    right: 50%;
+    transform: translateX(50%);
   }
 }

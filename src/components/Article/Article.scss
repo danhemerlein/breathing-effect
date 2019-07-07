@@ -1,0 +1,48 @@
+@import "../../styles/app.scss";
+
+.Article {
+  border: 3px solid map-get($colors, "white");
+
+  a {
+    text-decoration: none;
+    
+    &:visited {
+      text-decoration: none;
+      color: map-get($colors, "white");
+    }
+    
+    &:active {
+      text-decoration: none;
+      color: map-get($colors, "white");
+    }
+    
+    &:hover {
+      text-decoration: none;
+      color: map-get($colors, "white");
+    }
+  }
+
+  &__title {
+    text-decoration: underline;
+    font-size: 1.5rem;
+
+    &:visited {
+      text-decoration: underline;
+      color: map-get($colors, "white");
+    }
+
+    &:active {
+      text-decoration: underline;
+      color: map-get($colors, "white");
+    }
+    
+    &:hover {
+      text-decoration: underline;
+      color: map-get($colors, "white");
+    }
+  }
+
+  &__outlet {
+    font-size: 2rem;
+  }
+}

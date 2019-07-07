@@ -26,8 +26,8 @@ export default class Nav extends Component {
           </li>
 
           <li className="text-right mb1">
-            <Link to="/live">
-              live
+            <Link to="/tour">
+              tour
             </Link>
           </li>
 

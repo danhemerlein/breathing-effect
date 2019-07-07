@@ -3,34 +3,40 @@ import { Link } from "react-router-dom";
 
 import cx from 'classnames';
 
-import debounce from "utils/debounce";
-import './HomePage.scss'
-
 import SocialModule from 'components/SocialModule';
 import Nav from 'components/Nav';
-import Button from 'components/Button';
 import ArrowIcon from 'components/icons/Arrow';
 
-export default class HomePage extends Component {
+import debounce from "utils/debounce";
+import './Live.scss'
+import '../HomePage/HomePage.scss'
+
+export default class live extends Component {
 
   constructor(props) {
     super(props)
-  
+
     this.state = {
-       navOpen: false,
+      navOpen: false,
     }
   }
-  
+
   setHeight = () => {
-    const homePage = document.querySelector('.HomePage');
+    const live = document.querySelector('.Live');
 
-    const hpHeight = (window.innerHeight);
+    const lHeight = (window.innerHeight);
 
-    homePage.style.height = hpHeight + "px";
+    live.style.height = lHeight + "px";
   }
 
   debounceAPHeight = () => {
     debounce(this.setHeight(), 100);
+  }
+
+  toggleNav = () => {
+    this.setState({
+      navOpen: !this.state.navOpen,
+    })
   }
 
   componentDidMount() {
@@ -45,20 +51,15 @@ export default class HomePage extends Component {
     window.removeEventListener("resize", this.setHeight);
   }
 
-  toggleNav = () => {
-    this.setState({
-      navOpen: !this.state.navOpen,
-    })
-  }
-
   render() {
     const backgroundImage = {
       backgroundImage: "url(" + this.props.backgroundImage.fields.file.url + ")"
     };
 
+
     return (
-      <div className="HomePage">
-        <div style={backgroundImage} className={cx("h100 bg-cover overflow-hidden p2 relative")}>
+      <div className="Live">
+        <div style={backgroundImage} className={cx("h100 bg-cover overflow-hidden p2 relative flex flex-col")}>
 
           <h1 className={cx("HomePage__headline text-center color-white")}>
             <Link to="/">
@@ -70,11 +71,29 @@ export default class HomePage extends Component {
             <SocialModule></SocialModule>
           </div>
 
-          <div className={cx("HomePage__desktop-button-container absolute")}>
-            <Button></Button>
+          <div className="Press__container self-center w100 flex flex-col items-center justify-center mt4">
+{/* 
+            {
+              this.props.articles.map((article, key) => {
+                console.log(article)
+                return (
+                  <div key={key} className="Press__article col-6">
+                    <Article
+                      author={article.fields.author}
+                      date={article.fields.date}
+                      link={article.fields.link}
+                      outlet={article.fields.outlet}
+                      title={article.fields.title}
+
+                    ></Article>
+                  </div>
+                )
+              })
+            } */}
+
           </div>
 
-          <div className={cx("HomePage__arrow-container-container flex h100 absolute", { 'HomePage__arrow-container-container--show-nav': this.state.navOpen === true }, {'HomePage__arrow-container-container--hide-nav': this.state.navOpen === false })}>
+          <div className={cx("HomePage__arrow-container-container flex h100 absolute", { 'HomePage__arrow-container-container--show-nav': this.state.navOpen === true }, { 'HomePage__arrow-container-container--hide-nav': this.state.navOpen === false })}>
 
             <div className={cx("HomePage__arrow-container self-center pointer", { 'HomePage__arrow-container--arrow-not-rotated': this.state.navOpen === false }, { 'HomePage__arrow-container--arrow-rotated': this.state.navOpen === true })}>
 
@@ -90,7 +109,7 @@ export default class HomePage extends Component {
             <Nav></Nav>
 
           </div>
-         
+
         </div>
       </div>
     )
