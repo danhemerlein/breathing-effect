@@ -30,11 +30,13 @@ export default class Article extends Component {
             {this.props.outlet}
           </h3>
 
-          <h3 className="pb_5 pl1 Article__title">{this.props.title}</h3>
+          <h3 className="pb1 pl1 pr1 lg:pr0 lg:pl1 lg:pb_5 text-center lg:text-left Article__title">{this.props.title}</h3>
 
-          <div className="flex pl1 pb1">
+          <div className="flex flex-col lg:flex-row pl1 pr1 lg:pr0 lf:pl1 pb1">
             <h4 className={cx("pr_5", { 'block': this.state.hasAuthor === true }, { 'none': this.state.hasAuthor === false })}>by {this.props.author}</h4>
-            <span className={cx("pr_5", { 'block': this.state.hasAuthor === true }, { 'none': this.state.hasAuthor === false })}>|</span>
+            <div className="none lg:block">
+              <span className={cx("pr_5", { 'block': this.state.hasAuthor === true }, { 'none': this.state.hasAuthor === false })}>|</span>
+            </div>
             <h4 className="">{this.props.date}</h4>
           </div>
         </a>

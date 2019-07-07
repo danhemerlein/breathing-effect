@@ -103,61 +103,6 @@ export default class live extends Component {
               })
             }
 
-            <div className="Live__show col-9">
-
-              <Show
-                date="FUCK"
-                city="FUCK"
-                venue="FUCK"
-                ticketLink="FUCK"
-              ></Show>
-
-            </div>
-
-            <div className="Live__show col-9">
-
-              <Show
-                date="FUCK"
-                city="FUCK"
-                venue="FUCK"
-                ticketLink="FUCK"
-              ></Show>
-
-            </div>
-
-            <div className="Live__show col-9">
-
-              <Show
-                date="FUCK"
-                city="FUCK"
-                venue="FUCK"
-                ticketLink="FUCK"
-              ></Show>
-
-            </div>
-
-            <div className="Live__show col-9">
-
-              <Show
-                date="FUCK"
-                city="FUCK"
-                venue="FUCK"
-                ticketLink="FUCK"
-              ></Show>
-
-            </div>
-
-            <div className="Live__show col-9">
-
-              <Show
-                date="FUCK"
-                city="FUCK"
-                venue="FUCK"
-                ticketLink="FUCK"
-              ></Show>
-
-            </div>
-
           </div>
 
           <div className={cx("HomePage__arrow-container-container flex h100 absolute", { 'HomePage__arrow-container-container--show-nav': this.state.navOpen === true }, { 'HomePage__arrow-container-container--hide-nav': this.state.navOpen === false })}>

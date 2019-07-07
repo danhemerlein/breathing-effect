@@ -86,7 +86,7 @@ export default class Press extends Component {
             {
               this.props.articles.map((article, key) => {
                 return (
-                  <div key={key} className="Press__article col-6">
+                  <div key={key} className="Press__article col-9 lg:col-6">
                     <Article
                       author={article.fields.author}
                       date={article.fields.date}
