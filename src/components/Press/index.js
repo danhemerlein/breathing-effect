@@ -22,40 +22,47 @@ export default class Press extends Component {
     }
   }
 
-  setHeight = () => {
-    const press = document.querySelector('.Press');
-
-    const pHeight = (window.innerHeight);
-
-    press.style.height = pHeight + "px";
-  }
-
-  debounceAPHeight = () => {
-    debounce(this.setHeight(), 100);
-  }
-
   toggleNav = () => {
     this.setState({
       navOpen: !this.state.navOpen,
+      tallContent: false,
     })
   }
 
+  setHeightPP = () => {
+    const press = document.querySelector('.Press');
+    const pcContainer = document.querySelector('.Press__container');
+    const pHeight = (window.innerHeight);
+
+    // height of Articles plus height of title
+    const heightToCompare = pcContainer.offsetHeight + 144;
+
+    if (heightToCompare > window.innerHeight) {
+      press.style.height = "auto";
+    } else {
+      press.style.height = pHeight + "px";
+    }
+    
+  }
+
+  debouncePPHeight = () => {
+    debounce(this.setHeightPP(), 100);
+  }
 
   componentDidMount() {
-    this.setHeight();
+    this.setHeightPP();
 
-    window.addEventListener("resize", () => {
-      this.setHeight();
-    });
+    window.addEventListener("resize", this.debouncePPHeight);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.setHeight);
+    window.removeEventListener("resize", this.debouncePPHeight);
   }
 
   render() {
     const backgroundImage = {
-      backgroundImage: "url(" + this.props.backgroundImage.fields.file.url + ")"
+      backgroundImage: "url(" + this.props.backgroundImage.fields.file.url + ")",
+      backgroundAttachment: "fixed",
     };
 
     console.log(this.props.articles);
@@ -78,7 +85,6 @@ export default class Press extends Component {
 
             {
               this.props.articles.map((article, key) => {
-                console.log(article)
                 return (
                   <div key={key} className="Press__article col-6">
                     <Article
@@ -87,7 +93,6 @@ export default class Press extends Component {
                       link={article.fields.link}
                       outlet={article.fields.outlet}
                       title={article.fields.title}
-
                     ></Article>
                   </div>
                 )

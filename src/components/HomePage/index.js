@@ -21,7 +21,7 @@ export default class HomePage extends Component {
     }
   }
   
-  setHeight = () => {
+  setHeightHP = () => {
     const homePage = document.querySelector('.HomePage');
 
     const hpHeight = (window.innerHeight);
@@ -29,20 +29,17 @@ export default class HomePage extends Component {
     homePage.style.height = hpHeight + "px";
   }
 
-  debounceAPHeight = () => {
-    debounce(this.setHeight(), 100);
+  debounceHPHeight = () => {
+    debounce(this.setHeightHP(), 100);
   }
 
   componentDidMount() {
-    this.setHeight();
-
-    window.addEventListener("resize", () => {
-      this.setHeight();
-    });
+    this.setHeightHP();
+    window.addEventListener("resize", this.debounceHPHeight);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.setHeight);
+    window.removeEventListener("resize", this.debounceHPHeight);
   }
 
   toggleNav = () => {

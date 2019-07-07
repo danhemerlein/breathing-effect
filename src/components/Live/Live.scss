@@ -1,6 +1,15 @@
 @import "../../styles/app.scss";
 
 .Live {
-  height: 100vw;
+
+  &__show {
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    margin-top: 2rem;
+
+  }
  
 }

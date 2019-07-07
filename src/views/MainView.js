@@ -11,6 +11,7 @@ const MainView = ({ model }) => {
   if (!model || model.isError) return <h1>Oops, something went wrong!</h1>;
   let homePage = [];
   let pressPieces = [];
+  let shows = [];
   console.log(model);
   for (let i = 0; i < model.length; i++) {
     const element = model[i];
@@ -19,6 +20,9 @@ const MainView = ({ model }) => {
     }
     if ('outlet' in element.fields) {
       pressPieces.push(element);
+    }
+    if ('venue' in element.fields) {
+      shows.push(element);
     }
   }
 
@@ -49,6 +53,7 @@ const MainView = ({ model }) => {
 
             <Live
               backgroundImage={get(homePage, "fields.backgroundImage", {})}
+              shows={shows}
             />
 
           )} />

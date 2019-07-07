@@ -5,6 +5,7 @@ import cx from 'classnames';
 
 import SocialModule from 'components/SocialModule';
 import Nav from 'components/Nav';
+import Show from 'components/Show';
 import ArrowIcon from 'components/icons/Arrow';
 
 import debounce from "utils/debounce";
@@ -21,16 +22,30 @@ export default class live extends Component {
     }
   }
 
-  setHeight = () => {
-    const live = document.querySelector('.Live');
-
-    const lHeight = (window.innerHeight);
-
-    live.style.height = lHeight + "px";
+  toggleNav = () => {
+    this.setState({
+      navOpen: !this.state.navOpen,
+    })
   }
 
-  debounceAPHeight = () => {
-    debounce(this.setHeight(), 100);
+  setHeightLP = () => {
+    const live = document.querySelector('.Live');
+    const lContainer = document.querySelector('.Live__container');
+    const lHeight = (window.innerHeight);
+
+    // height of Articles plus height of title
+    const heightToCompare = lContainer.offsetHeight + 144;
+
+    if (heightToCompare > window.innerHeight) {
+      live.style.height = "auto";
+    } else {
+      live.style.height = lHeight + "px";
+    }
+
+  }
+
+  debounceLPHeight = () => {
+    debounce(this.setHeightLP(), 100);
   }
 
   toggleNav = () => {
@@ -40,20 +55,19 @@ export default class live extends Component {
   }
 
   componentDidMount() {
-    this.setHeight();
+    this.setHeightLP();
 
-    window.addEventListener("resize", () => {
-      this.setHeight();
-    });
+    window.addEventListener("resize", this.debounceLPHeight);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.setHeight);
+    window.removeEventListener("resize", this.debounceLPHeight);
   }
 
   render() {
     const backgroundImage = {
-      backgroundImage: "url(" + this.props.backgroundImage.fields.file.url + ")"
+      backgroundImage: "url(" + this.props.backgroundImage.fields.file.url + ")",
+      backgroundAttachment: "fixed",
     };
 
 
@@ -71,25 +85,78 @@ export default class live extends Component {
             <SocialModule></SocialModule>
           </div>
 
-          <div className="Press__container self-center w100 flex flex-col items-center justify-center mt4">
-{/* 
-            {
-              this.props.articles.map((article, key) => {
-                console.log(article)
-                return (
-                  <div key={key} className="Press__article col-6">
-                    <Article
-                      author={article.fields.author}
-                      date={article.fields.date}
-                      link={article.fields.link}
-                      outlet={article.fields.outlet}
-                      title={article.fields.title}
+          <div className="Live__container self-center w100 flex flex-col items-center justify-center mt4">
 
-                    ></Article>
+            {
+              this.props.shows.map((show, key) => {
+                console.log(show);
+                return (
+                  <div key={key} className="Live__show col-9">
+                    <Show
+                        date={show.fields.date}
+                        city={show.fields.city}
+                        venue={show.fields.venue}
+                        ticketLink={show.fields.ticketLink}
+                    ></Show>
                   </div>
                 )
               })
-            } */}
+            }
+
+            <div className="Live__show col-9">
+
+              <Show
+                date="FUCK"
+                city="FUCK"
+                venue="FUCK"
+                ticketLink="FUCK"
+              ></Show>
+
+            </div>
+
+            <div className="Live__show col-9">
+
+              <Show
+                date="FUCK"
+                city="FUCK"
+                venue="FUCK"
+                ticketLink="FUCK"
+              ></Show>
+
+            </div>
+
+            <div className="Live__show col-9">
+
+              <Show
+                date="FUCK"
+                city="FUCK"
+                venue="FUCK"
+                ticketLink="FUCK"
+              ></Show>
+
+            </div>
+
+            <div className="Live__show col-9">
+
+              <Show
+                date="FUCK"
+                city="FUCK"
+                venue="FUCK"
+                ticketLink="FUCK"
+              ></Show>
+
+            </div>
+
+            <div className="Live__show col-9">
+
+              <Show
+                date="FUCK"
+                city="FUCK"
+                venue="FUCK"
+                ticketLink="FUCK"
+              ></Show>
+
+            </div>
 
           </div>
 

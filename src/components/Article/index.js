@@ -23,7 +23,6 @@ export default class Article extends Component {
   }
   
   render() {
-    console.log(this.props.author)
     return (
       <div className="Article color-white">
         <a href={this.props.link} target="_blank" rel="noopener noreferrer" className="block">
