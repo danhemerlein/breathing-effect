@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import cx from 'classnames';
 
-
 import './Article.scss'
 
 export default class Article extends Component {

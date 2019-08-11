@@ -24,9 +24,40 @@
       }
   }
 
+  &__container {
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 900px;
+    align-items: center;
+
+    @media (min-width: 1100px) {
+      margin: 0 auto;
+      max-width: auto;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    &--left {
+
+    }
+
+    &--right {
+      
+    }
+
+  }
+
   &__desktop-socials-container {
-    right: 2rem;
-    bottom: 2rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    position: fixed;
+
+    @media (min-width: 1100px) {
+      right: 2rem;
+      bottom: 2rem;
+      position: absolute;
+    }
   }
 
   &__arrow-container-container {

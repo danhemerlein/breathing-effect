@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import cx from 'classnames';
-
 import './Nav.scss'
 
 export default class Nav extends Component {
@@ -25,17 +23,17 @@ export default class Nav extends Component {
             </Link>
           </li>
 
-          <li className="text-right mb1">
+          {/* <li className="text-right mb1">
             <Link to="/tour">
               tour
             </Link>
-          </li>
+          </li> */}
 
-          <li className="text-right mb1">
+          {/* <li className="text-right mb1">
             <Link to="/media">
               media
             </Link>
-          </li>
+          </li> */}
 
           <li className="text-right">
             <a href="mailto:breathingeffect@gmail.com">email us</a>
