@@ -26,14 +26,22 @@ export default class HomePage extends Component {
     const homePage = document.querySelector('.HomePage');
     const hpHeight = (window.innerHeight);
     const pressContainer = document.querySelector('.Press__container');
+    const navContainer = document.querySelector('.HomePage__nav-container');
+    const arrowContainer = document.querySelector('.HomePage__arrow-container-container');
     const frame = document.querySelector('iframe');
+
+    navContainer.style.height = window.innerHeight;
 
     if (window.innerWidth > 1100) {
       frame.style.height = (pressContainer.offsetHeight - 16) + "px";
       homePage.style.height = hpHeight + "px";
+      navContainer.style.height = hpHeight + "px";
+      arrowContainer.style.height = hpHeight + "px";
     } else {
       frame.style.height = "350px"; 
       homePage.style.height = "auto";
+      navContainer.style.height = "100vh";
+      arrowContainer.style.height = "100vh";
     }
   }
 
@@ -53,7 +61,7 @@ export default class HomePage extends Component {
   toggleNav = () => {
     this.setState({
       navOpen: !this.state.navOpen,
-    })
+    });
   }
 
   render() {
@@ -105,7 +113,7 @@ export default class HomePage extends Component {
                 {
                   this.props.articles.map((article, key) => {
                     return (
-                      <div key={key} className="Press__article mt1 col-12">
+                      <div key={key} className="mt1 col-12">
                         <Article
                           author={article.fields.author}
                           date={article.fields.date}
@@ -123,13 +131,6 @@ export default class HomePage extends Component {
             </div>
 
           </div>
- 
-          {/* <div className={cx("HomePage__desktop-button-container absolute")}>
-            <Button
-              href="https://open.spotify.com/artist/4sfL701NAogwKc7mBMWNsy?si=Rwd_dsDfS2qIFz5S08fWPQ"
-              cta="listen on spotify"
-            ></Button>
-          </div> */}
 
           <div className={cx("HomePage__desktop-socials-container")}>
             <SocialModule></SocialModule>
@@ -140,7 +141,8 @@ export default class HomePage extends Component {
             <div className={cx("HomePage__arrow-container self-center pointer", { 'HomePage__arrow-container--arrow-not-rotated': this.state.navOpen === false }, { 'HomePage__arrow-container--arrow-rotated': this.state.navOpen === true })}>
 
               <ArrowIcon
-                clickHandler={this.toggleNav}>
+                clickHandler={this.toggleNav}
+              >
               </ArrowIcon>
 
             </div>
@@ -148,7 +150,9 @@ export default class HomePage extends Component {
 
           <div className={cx("HomePage__nav-container h100", { 'HomePage__nav-container--show': this.state.navOpen === true }, { 'HomePage__nav-container--hide': this.state.navOpen === false })}>
 
-            <Nav></Nav>
+            <Nav
+              clickHandler={this.toggleNav}
+            ></Nav>
 
           </div>
          

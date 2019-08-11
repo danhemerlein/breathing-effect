@@ -1,5 +1,34 @@
 @import "../../styles/app.scss";
 
 .Nav {
-  
+
+   a {
+    text-decoration: underline;
+    color: map-get($colors, "black");
+    
+    &:visited {
+      text-decoration: underline;
+      color: map-get($colors, "black");
+    }
+    
+    &:active {
+      text-decoration: underline;
+      color: map-get($colors, "black");
+    }
+    
+    &:hover {
+      text-decoration: underline;
+      color: map-get($colors, "black");
+    }
+  }
+
+  &__close-icon {
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+
+    svg {
+      width: 100%;
+    }
+  }
 }

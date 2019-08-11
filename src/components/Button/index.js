@@ -8,7 +8,7 @@ export default class Button extends Component {
 
     return (
       <div className="Button flex items-center justify-center">
-        <a href={this.props.href} target="_blank" rel="noopener noreferrer" className="Button__link p2 text-center bg-color-white">{this.props.cta}</a>
+        <a href={this.props.href} target="_blank" rel="noopener noreferrer" className="Button__link p2 text-center color-white relative block">{this.props.cta}</a>
       </div>
     )
   }

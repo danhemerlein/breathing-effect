@@ -65,8 +65,6 @@ export default class Press extends Component {
       backgroundAttachment: "fixed",
     };
 
-    console.log(this.props.articles);
-
     return (
       <div className="Press">
         <div style={backgroundImage} className={cx("h100 bg-cover overflow-hidden p2 relative flex flex-col")}>
@@ -114,7 +112,9 @@ export default class Press extends Component {
 
           <div className={cx("HomePage__nav-container h100", { 'HomePage__nav-container--show': this.state.navOpen === true }, { 'HomePage__nav-container--hide': this.state.navOpen === false })}>
 
-            <Nav></Nav>
+            <Nav
+              clickHandler={this.toggleNav}
+            ></Nav>
 
           </div>
 

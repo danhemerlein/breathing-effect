@@ -2,10 +2,33 @@
 
 .Button {
   &__link {
-    border: 3px solid map-get($colors, "black");
-    color: map-get($colors, "black");
+    border: 3px solid map-get($colors, "white");
     text-decoration: none;
     display: block;
     width: 15rem;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.75);
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 0;
+      height: 100%;
+      z-index: 0;
+      transform: rotate(180deg);
+      background-image: url("./stars.svg?v=#{random()};");
+      background-position: center;
+      background-repeat: repeat-x;
+      background-size: contain;
+      transition: width 1.75s cubic-bezier(0.25, 0.2, 0, 1);
+    }
+
+    &:hover {
+      &:before {
+        width: 100%;
+      }
+    }
   }
 }

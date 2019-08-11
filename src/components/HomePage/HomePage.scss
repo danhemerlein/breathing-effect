@@ -4,6 +4,8 @@
   height: 100vw;
 
   &__headline {
+    font-size: 2rem;
+
     a {       
       text-decoration: none;
       
@@ -43,7 +45,7 @@
     }
 
     &--right {
-      
+
     }
 
   }
@@ -61,6 +63,7 @@
   }
 
   &__arrow-container-container {
+    top: 0;
     transition: transform 2s cubic-bezier(0.25, 0.2, 0, 1);
 
     &--show-nav {
@@ -80,7 +83,7 @@
     svg {
       height: 3rem;
       width: 3rem;
-      fill: map-get($colors, "black");
+      fill: map-get($colors, "white");
     }
 
      &--arrow-rotated {
@@ -109,6 +112,7 @@
     
     &--show {
       transform: translateX(-2rem);
+      position: fixed;
     }
   }
 
