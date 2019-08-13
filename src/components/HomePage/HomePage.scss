@@ -77,6 +77,19 @@
     }
   }
 
+  &__hamburger-icon {
+
+    top: 2rem;
+    left: 2rem;
+    cursor: pointer;
+
+    svg {
+      height: 2rem;
+      width: 2rem;
+      fill: map-get($colors, "white");
+    }
+  }
+
   &__arrow-container {
     transition: transform 2s cubic-bezier(0.25, 0.2, 0, 1);
 

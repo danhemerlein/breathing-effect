@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import cx from 'classnames';
 
@@ -9,8 +9,10 @@ import './HomePage.scss'
 import SocialModule from 'components/SocialModule';
 import Nav from 'components/Nav';
 import Button from 'components/Button';
-import ArrowIcon from 'components/icons/Arrow';
 import Article from 'components/Article';
+
+import ArrowIcon from 'components/icons/Arrow';
+import Hamburger from 'components/icons/Hamburger';
 
 export default class HomePage extends Component {
 
@@ -73,11 +75,11 @@ export default class HomePage extends Component {
       <div className="HomePage flex w100 ">
         <div style={backgroundImage} className={cx("h100 bg-cover overflow-hidden p2 relative w100")}>
 
-          <h1 className={cx("HomePage__headline text-center color-white")}>
+          {/* <h1 className={cx("HomePage__headline text-center color-white")}>
             <Link to="/">
               The Breathing Effect
             </Link>
-          </h1>
+          </h1> */}
 
           <div className="HomePage__container flex mt2">
 
@@ -136,7 +138,7 @@ export default class HomePage extends Component {
             <SocialModule></SocialModule>
           </div>
 
-          <div className={cx("HomePage__arrow-container-container flex h100 absolute", { 'HomePage__arrow-container-container--show-nav': this.state.navOpen === true }, {'HomePage__arrow-container-container--hide-nav': this.state.navOpen === false })}>
+          <div className={cx("HomePage__arrow-container-container flex h100 absolute none cs:block", { 'HomePage__arrow-container-container--show-nav': this.state.navOpen === true }, {'HomePage__arrow-container-container--hide-nav': this.state.navOpen === false })}>
 
             <div className={cx("HomePage__arrow-container self-center pointer", { 'HomePage__arrow-container--arrow-not-rotated': this.state.navOpen === false }, { 'HomePage__arrow-container--arrow-rotated': this.state.navOpen === true })}>
 
@@ -146,6 +148,16 @@ export default class HomePage extends Component {
               </ArrowIcon>
 
             </div>
+
+          </div>
+
+          <div className={cx("HomePage__hamburger-icon absolute block cs:none")}>
+
+              <Hamburger
+                clickHandler={this.toggleNav}
+              >
+              </Hamburger>
+
           </div>
 
           <div className={cx("HomePage__nav-container h100", { 'HomePage__nav-container--show': this.state.navOpen === true }, { 'HomePage__nav-container--hide': this.state.navOpen === false })}>
