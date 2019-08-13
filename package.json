@@ -2,7 +2,6 @@
   "name": "breathing-effect",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://danhemerlein.github.io/breathing-effect/",
   "dependencies": {
     "@sanctucompu/basement": "^1.0.0",
     "classnames": "^2.2.6",
