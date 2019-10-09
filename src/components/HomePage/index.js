@@ -71,12 +71,12 @@ export default class HomePage extends Component {
     return (
       <div className="HomePage flex w100 ">
         <div style={backgroundImage} className={cx("h100 bg-cover overflow-hidden p2 relative w100")}>
-
-          <h1 className={cx("HomePage__headline HomePage__band-name text-center color-white")}>
+        
             <Link to="/">
-              The Breathing Effect
+              <h1 className={cx("HomePage__headline HomePage__band-name text-center color-white")}>
+                  The Breathing Effect
+              </h1>
             </Link>
-          </h1>
 
           <div className="HomePage__container flex mt2">
 
