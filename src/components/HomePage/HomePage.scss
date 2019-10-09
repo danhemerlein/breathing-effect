@@ -29,10 +29,11 @@
       }
     }
   }
-
+  
   &__band-name {
-
+    
     text-decoration: none;
+    color: map-get($colors, "whites");
     
     &:visited {
       text-decoration: none;
