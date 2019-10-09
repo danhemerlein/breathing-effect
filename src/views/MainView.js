@@ -36,6 +36,7 @@ const MainView = ({ model }) => {
             <HomePage 
               {...props}    
               backgroundImage={get(homePage, "fields.backgroundImage", {})}
+              bandImage={get(homePage, "fields.bandPhoto", {})}
               articles={pressPieces}
             />
 

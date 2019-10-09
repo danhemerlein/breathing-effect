@@ -31,7 +31,8 @@
     justify-content: space-between;
     max-width: 900px;
     align-items: center;
-
+    margin: 0 auto;
+    
     @media (min-width: 1100px) {
       margin: 0 auto;
       max-width: auto;
@@ -48,6 +49,11 @@
 
     }
 
+  }
+
+  &__band-image {
+    max-width: 600px;
+    margin: 0 auto;
   }
 
   &__desktop-socials-container {
