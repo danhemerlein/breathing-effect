@@ -4,7 +4,11 @@
   height: 100vw;
 
   &__headline {
-    font-size: 2rem;
+    font-size: 1.35rem;
+    
+    @media (min-width: 1100px) {
+      font-size: 2rem;
+    }
 
     a {       
       text-decoration: none;
@@ -23,7 +27,28 @@
         text-decoration: none;
         color: map-get($colors, "white");
       }
-      }
+    }
+  }
+
+  &__band-name {
+
+    text-decoration: none;
+    
+    &:visited {
+      text-decoration: none;
+      color: map-get($colors, "white");
+    }
+    
+    &:active {
+      text-decoration: none;
+      color: map-get($colors, "white");
+    }
+    
+    &:hover {
+      text-decoration: none;
+      color: map-get($colors, "white");
+    }
+
   }
 
   &__container {
@@ -54,17 +79,18 @@
   &__band-image {
     max-width: 600px;
     margin: 0 auto;
+    height: 40%;
   }
 
   &__desktop-socials-container {
     right: 0.5rem;
-    bottom: 0.5rem;
+    top: 0.5rem;
     position: fixed;
-
+    
     @media (min-width: 1100px) {
       right: 2rem;
-      bottom: 2rem;
-      position: absolute;
+      top: 2rem;
+      position: fixed;
     }
   }
 

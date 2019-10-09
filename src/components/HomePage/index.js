@@ -27,8 +27,6 @@ export default class HomePage extends Component {
   setHeightHP = () => {
     const homePage = document.querySelector('.HomePage');
 
-    // const hpHeight = (window.innerHeight);
-
     const pressContainer = document.querySelector('.Press__container');
 
     const navContainer = document.querySelector('.HomePage__nav-container');
@@ -37,13 +35,10 @@ export default class HomePage extends Component {
 
     const frame = document.querySelector('iframe');
 
-    navContainer.style.height = window.innerHeight;
-
     if (window.innerWidth > 1100) {
       frame.style.height = (pressContainer.offsetHeight - 16) + "px";
-      // homePage.style.height = hpHeight + "px";
-      // navContainer.style.height = hpHeight + "px";
-      // arrowContainer.style.height = hpHeight + "px";
+      navContainer.style.height = "100vh";
+      arrowContainer.style.height = "100vh";
     } else {
       frame.style.height = "350px"; 
       homePage.style.height = "auto";
@@ -77,7 +72,7 @@ export default class HomePage extends Component {
       <div className="HomePage flex w100 ">
         <div style={backgroundImage} className={cx("h100 bg-cover overflow-hidden p2 relative w100")}>
 
-          <h1 className={cx("HomePage__headline text-center color-white")}>
+          <h1 className={cx("HomePage__headline HomePage__band-name text-center color-white")}>
             <Link to="/">
               The Breathing Effect
             </Link>
@@ -136,7 +131,7 @@ export default class HomePage extends Component {
           
           </div>
 
-          <div className="HomePage__band-image flex items-cente justify-center mt2">
+          <div className="HomePage__band-image mt2 flex justify-center items-center">
 
             <img src={this.props.bandImage.fields.file.url} alt={this.props.bandImage.fields.file.title} className="col-11" />
 
