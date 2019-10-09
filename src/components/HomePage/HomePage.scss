@@ -14,7 +14,7 @@
     
     a {       
       text-decoration: none;
-      color: map-get($colors, "whites");
+      color: map-get($colors, "white");
       
       &:visited {
         text-decoration: none;
@@ -36,7 +36,7 @@
   &__band-name {
     
     text-decoration: none;
-    color: map-get($colors, "whites");
+    color: map-get($colors, "white");
     
     &:visited {
       text-decoration: none;
