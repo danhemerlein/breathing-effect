@@ -62,7 +62,7 @@ export default class Press extends Component {
   render() {
     const backgroundImage = {
       backgroundImage: "url(" + this.props.backgroundImage.fields.file.url + ")",
-      backgroundAttachment: "fixed",
+      // backgroundAttachment: "fixed",
     };
 
     return (

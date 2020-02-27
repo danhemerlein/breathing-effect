@@ -33,14 +33,18 @@ export default class HomePage extends Component {
 
     const arrowContainer = document.querySelector('.HomePage__arrow-container-container');
 
-    const frame = document.querySelector('iframe');
+    const frames = document.querySelectorAll('iframe');
 
     if (window.innerWidth > 1100) {
-      frame.style.height = (pressContainer.offsetHeight - 16) + "px";
+      for (let frame of frames) {
+        frame.style.height = (pressContainer.offsetHeight - 16) + "px";
+      }
       navContainer.style.height = "100vh";
       arrowContainer.style.height = "100vh";
     } else {
-      frame.style.height = "350px";
+      for (let frame of frames) {
+        frame.style.height = "350px";
+      }
       homePage.style.height = "auto";
       navContainer.style.height = "100vh";
       arrowContainer.style.height = "100vh";
@@ -99,8 +103,23 @@ export default class HomePage extends Component {
               <div className="Homepage__container-iframe col-12 mt1">
                 <iframe
                   className="col-12"
-                  title="Ocean Cycle (Live in a Liquid House)"
-                  src="https://www.youtube.com/embed/jnX6CNER8Ig"
+                  title="The Breathing Effect 'In The Morning' (Official Video)"
+                  src="https://www.youtube.com/embed/yrYLPsyLMHY"
+                  frameBorder="0"
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen="allowfullscreen"
+                  mozallowfullscreen="mozallowfullscreen"
+                  msallowfullscreen="msallowfullscreen"
+                  oallowfullscreen="oallowfullscreen"
+                  webkitallowfullscreen="webkitallowfullscreen"
+                ></iframe>
+              </div>
+
+              <div className="Homepage__container-iframe col-12 mt1">
+                <iframe
+                  className="col-12"
+                  title="The Breathing Effect: 'SHAPES THAT CHANGE SHAPE'"
+                  src="https://www.youtube.com/embed/KAQr0SPUqQ8"
                   frameBorder="0"
                   allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen="allowfullscreen"
@@ -120,18 +139,37 @@ export default class HomePage extends Component {
 
               <div className="Press__container self-center w100 flex flex-col items-center justify-center">
                 {this.props.articles.map((article, key) => {
-                  return (
-                    <div key={key} className="mt1 col-12">
-                      <Article
-                        author={article.fields.author}
-                        date={article.fields.date}
-                        link={article.fields.link}
-                        outlet={article.fields.outlet}
-                        title={article.fields.title}
-                      ></Article>
-                    </div>
-                  );
+                  if (key < 3) {
+                    return (
+                      <div key={key} className="mt1 col-12">
+                        <Article
+                          author={article.fields.author}
+                          date={article.fields.date}
+                          link={article.fields.link}
+                          outlet={article.fields.outlet}
+                          title={article.fields.title}
+                        ></Article>
+                      </div>
+                    );
+                  } else {
+                    return null;
+                  }
                 })}
+              </div>
+
+              <div className="Homepage__container-iframe col-12 mt1">
+                <iframe
+                  className="col-12"
+                  title="Ocean Cycle (Live in a Liquid House)"
+                  src="https://www.youtube.com/embed/jnX6CNER8Ig"
+                  frameBorder="0"
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen="allowfullscreen"
+                  mozallowfullscreen="mozallowfullscreen"
+                  msallowfullscreen="msallowfullscreen"
+                  oallowfullscreen="oallowfullscreen"
+                  webkitallowfullscreen="webkitallowfullscreen"
+                ></iframe>
               </div>
             </div>
           </div>
