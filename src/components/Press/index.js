@@ -7,6 +7,7 @@ import SocialModule from 'components/SocialModule';
 import Nav from 'components/Nav';
 import Article from 'components/Article';
 import ArrowIcon from 'components/icons/Arrow';
+import Hamburger from "components/icons/Hamburger";
 
 import debounce from "utils/debounce";
 import './Press.scss'
@@ -132,6 +133,12 @@ export default class Press extends Component {
             >
               <ArrowIcon clickHandler={this.toggleNav}></ArrowIcon>
             </div>
+          </div>
+
+          <div
+            className={cx("HomePage__hamburger-icon absolute block cs:none")}
+          >
+            <Hamburger clickHandler={this.toggleNav}></Hamburger>
           </div>
 
           <div
