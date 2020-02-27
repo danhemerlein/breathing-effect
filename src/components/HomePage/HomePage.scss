@@ -3,51 +3,67 @@
 .HomePage {
   height: 100vw;
 
+  &__nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 4;
+    cursor: pointer;
+
+    &--active {
+      display: block;
+    }
+  }
+
   &__headline {
     font-size: 1.35rem;
     text-decoration: none;
     color: map-get($colors, "whites");
-    
+
     @media (min-width: 1100px) {
       font-size: 2rem;
     }
-    
-    a {       
+
+    a {
       text-decoration: none;
       color: map-get($colors, "white");
-      
+
       &:visited {
         text-decoration: none;
         color: map-get($colors, "white");
       }
-      
+
       &:active {
         text-decoration: none;
         color: map-get($colors, "white");
       }
-      
+
       &:hover {
         text-decoration: none;
         color: map-get($colors, "white");
       }
     }
   }
-  
+
   &__band-name {
-    
+
     text-decoration: none;
     color: map-get($colors, "white");
-    
+
     &:visited {
       text-decoration: none;
       color: map-get($colors, "white");
     }
-    
+
     &:active {
       text-decoration: none;
       color: map-get($colors, "white");
     }
-    
+
     &:hover {
       text-decoration: none;
       color: map-get($colors, "white");
@@ -61,7 +77,7 @@
     max-width: 900px;
     align-items: center;
     margin: 0 auto;
-    
+
     @media (min-width: 1100px) {
       margin: 0 auto;
       max-width: auto;
@@ -69,15 +85,6 @@
       align-items: flex-start;
       justify-content: center;
     }
-
-    &--left {
-
-    }
-
-    &--right {
-
-    }
-
   }
 
   &__band-image {
@@ -90,7 +97,7 @@
     right: 0.5rem;
     top: 0.5rem;
     position: fixed;
-    
+
     @media (min-width: 1100px) {
       right: 2rem;
       top: 2rem;
@@ -100,6 +107,7 @@
 
   &__arrow-container-container {
     top: 0;
+    z-index: 500;
     transition: transform 2s cubic-bezier(0.25, 0.2, 0, 1);
 
     &--show-nav {
@@ -142,7 +150,7 @@
 
     &--arrow-not-rotated {
       transform: rotate(0deg);
-      transition: transform 2s cubic-bezier(0.25, 0.2, 0, 1); 
+      transition: transform 2s cubic-bezier(0.25, 0.2, 0, 1);
     }
   }
 
@@ -152,13 +160,14 @@
     z-index: 1;
     width: 16rem;
     top: 0;
+    z-index: 500;
     transition: transform 2s cubic-bezier(0.25, 0.2, 0, 1);
 
     &--hide {
       transform: translateX(-18rem);
       cursor: pointer;
     }
-    
+
     &--show {
       transform: translateX(-2rem);
       position: fixed;

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import CloseIcon from 'components/icons/Close';
 
-
 import './Nav.scss'
 
 export default class Nav extends Component {
@@ -14,7 +13,7 @@ export default class Nav extends Component {
       <div className="Nav col-12 h100 bg-color-white flex items-center jusity-center relative">
 
         <div className="Nav__close-icon col-2 absolute">
-          <CloseIcon 
+          <CloseIcon
             clickHandler={this.props.clickHandler}
           ></CloseIcon>
         </div>
@@ -32,18 +31,6 @@ export default class Nav extends Component {
               press
             </Link>
           </li>
-
-          {/* <li className="text-right mb1">
-            <Link to="/tour">
-              tour
-            </Link>
-          </li> */}
-
-          {/* <li className="text-right mb1">
-            <Link to="/media">
-              media
-            </Link>
-          </li> */}
 
           <li className="text-right">
             <a href="mailto:breathingeffect@gmail.com">email us</a>
