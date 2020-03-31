@@ -20,7 +20,7 @@
   }
 
   &__headline {
-    font-size: 1.35rem;
+    font-size: 1rem;
     text-decoration: none;
     color: map-get($colors, "whites");
 
@@ -178,5 +178,10 @@
     bottom: 2rem;
     right: 50%;
     transform: translateX(50%);
+  }
+  &__bandcamp-iframe {
+    border: 0;
+    width: 370px;
+    height: 470px !important;
   }
 }

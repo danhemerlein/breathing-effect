@@ -72,6 +72,11 @@ export default class HomePage extends Component {
       backgroundImage: "url(" + this.props.backgroundImage.fields.file.url + ")"
     };
 
+    const iframeStyles = {
+
+
+    }
+
     return (
       <div className="HomePage flex w100 ">
         <div
@@ -92,6 +97,18 @@ export default class HomePage extends Component {
           >
             <Link to="/"> The Breathing Effect</Link>
           </h1>
+
+          <div className="flex items-center justify-center my2">
+            <iframe
+              className="HomePage__bandcamp-iframe"
+              src="https://bandcamp.com/EmbeddedPlayer/album=2474253844/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+              seamless
+            >
+              <a href="http://thebreathingeffect.bandcamp.com/album/photosynthesis">
+                Photosynthesis by The Breathing Effect
+              </a>
+            </iframe>
+          </div>
 
           <div className="HomePage__container flex mt2">
             <div className="HomePage__container--left col-10 md:col-6 mr_5">
