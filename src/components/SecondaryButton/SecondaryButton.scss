@@ -1,0 +1,19 @@
+@import "../../styles/app.scss";
+
+.SecondaryButton {
+
+  &__link {
+    padding: 1.5rem;
+    text-decoration: none;
+    display: block;
+    width: 15rem;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.25);
+    border: 3px solid map-get($colors, "white");
+
+    &:hover {
+      border: 3px solid map-get($colors, "red");
+    }
+  }
+
+}

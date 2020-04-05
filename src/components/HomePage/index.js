@@ -9,6 +9,7 @@ import './HomePage.scss'
 import SocialModule from 'components/SocialModule';
 import Nav from 'components/Nav';
 import Button from 'components/Button';
+import SecondaryButton from 'components/SecondaryButton';
 import Article from 'components/Article';
 
 import ArrowIcon from 'components/icons/Arrow';
@@ -72,17 +73,12 @@ export default class HomePage extends Component {
       backgroundImage: "url(" + this.props.backgroundImage.fields.file.url + ")"
     };
 
-    const iframeStyles = {
-
-
-    }
-
     return (
       <div className="HomePage flex w100 ">
         <div
           onClick={this.toggleNav}
           className={cx("HomePage__nav-overlay p0 m0", {
-            "HomePage__nav-overlay--active": this.state.navOpen
+            "HomePage__nav-overlay--active": this.state.navOpen,
           })}
         ></div>
 
@@ -109,6 +105,11 @@ export default class HomePage extends Component {
               </a>
             </iframe>
           </div>
+
+          <SecondaryButton
+            href="https://qrates.com/projects/20039"
+            cta="DONATE TO HELP US MAKE VINYL!"
+          ></SecondaryButton>
 
           <div className="HomePage__container flex mt2">
             <div className="HomePage__container--left col-10 md:col-6 mr_5">
@@ -208,11 +209,11 @@ export default class HomePage extends Component {
               "HomePage__arrow-container-container flex h100 absolute none cs:block",
               {
                 "HomePage__arrow-container-container--show-nav":
-                  this.state.navOpen === true
+                  this.state.navOpen === true,
               },
               {
                 "HomePage__arrow-container-container--hide-nav":
-                  this.state.navOpen === false
+                  this.state.navOpen === false,
               }
             )}
           >
@@ -221,11 +222,11 @@ export default class HomePage extends Component {
                 "HomePage__arrow-container mt2 self-center pointer",
                 {
                   "HomePage__arrow-container--arrow-not-rotated":
-                    this.state.navOpen === false
+                    this.state.navOpen === false,
                 },
                 {
                   "HomePage__arrow-container--arrow-rotated":
-                    this.state.navOpen === true
+                    this.state.navOpen === true,
                 }
               )}
             >
