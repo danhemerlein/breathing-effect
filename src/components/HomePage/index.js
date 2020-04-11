@@ -108,7 +108,7 @@ export default class HomePage extends Component {
 
           <SecondaryButton
             href="https://qrates.com/projects/20039"
-            cta="DONATE TO HELP US MAKE VINYL!"
+            cta="preorder vinyl now"
           ></SecondaryButton>
 
           <div className="HomePage__container flex mt2">
