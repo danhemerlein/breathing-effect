@@ -8,7 +8,7 @@ import Hamburger from '../../components/icons/Hamburger'
 import Nav from '../../components/Nav'
 import SecondaryButton from '../../components/SecondaryButton'
 import SocialModule from '../../components/SocialModule'
-import debounce from '../../utils/debounce'
+import { debounce } from '../../utils/debounce'
 import './HomePage.scss'
 
 export default class HomePage extends Component {

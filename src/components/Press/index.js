@@ -6,7 +6,7 @@ import ArrowIcon from '../../components/icons/Arrow'
 import Hamburger from '../../components/icons/Hamburger'
 import Nav from '../../components/Nav'
 import SocialModule from '../../components/SocialModule'
-import debounce from '../../utils/debounce'
+import { debounce } from '../../utils/debounce'
 import '../HomePage/HomePage.scss'
 import './Press.scss'
 

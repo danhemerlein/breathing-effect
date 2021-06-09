@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import debounce from '../../utils/debounce'
+import { debounce } from '../../utils/debounce'
 import './NotFound.scss'
 
 export default class NotFound extends Component {

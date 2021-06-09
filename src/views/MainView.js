@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import HomePage from '../components/HomePage'
 import NotFound from '../components/NotFound'
 import Press from '../components/Press'
-import get from '../utils/get'
+import { get } from '../utils/get'
 
 // import Live from 'components/Live';
 
