@@ -1,14 +1,14 @@
 import cx from 'classnames'
-import Article from 'components/Article'
-import Button from 'components/Button'
-import ArrowIcon from 'components/icons/Arrow'
-import Hamburger from 'components/icons/Hamburger'
-import Nav from 'components/Nav'
-import SecondaryButton from 'components/SecondaryButton'
-import SocialModule from 'components/SocialModule'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import debounce from 'utils/debounce'
+import Article from '../../components/Article'
+import Button from '../../components/Button'
+import ArrowIcon from '../../components/icons/Arrow'
+import Hamburger from '../../components/icons/Hamburger'
+import Nav from '../../components/Nav'
+import SecondaryButton from '../../components/SecondaryButton'
+import SocialModule from '../../components/SocialModule'
+import debounce from '../../utils/debounce'
 import './HomePage.scss'
 
 export default class HomePage extends Component {
@@ -98,6 +98,7 @@ export default class HomePage extends Component {
               className='HomePage__bandcamp-iframe'
               src='https://bandcamp.com/EmbeddedPlayer/album=1842671387/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/'
               seamless
+              title='Solarpunk Playlist by The Breathing Effect'
             >
               <a href='https://thebreathingeffect.bandcamp.com/album/solarpunk-playlist'>
                 Solarpunk Playlist by The Breathing Effect
